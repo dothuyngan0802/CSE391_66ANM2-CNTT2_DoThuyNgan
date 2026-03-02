@@ -1,0 +1,101 @@
+/* ===== TODO 1: Reset margin, padding và box-sizing ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ===== TODO 2: Type selector cho body ===== */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+}
+
+/* ===== TODO 3: ID selector cho #main-header ===== */
+#main-header {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+/* ===== TODO 4 + 6: Nav dùng Flexbox ===== */
+nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    padding: 15px;
+    background: #f8f9fa;
+}
+
+/* Class selector cho .nav-link */
+.nav-link {
+    color: #333;
+    text-decoration: none;
+    padding: 10px 15px;
+    font-weight: bold;
+}
+
+/* ===== TODO 5: Group selector ===== */
+h1, h2, h3 {
+    font-family: Arial, sans-serif;
+}
+
+/* ===== TODO 7: Pseudo-class ===== */
+a:hover {
+    color: #ff6600;
+    background-color: #eee;
+    border-radius: 4px;
+}
+
+/* ===== Flexbox cho layout card ===== */
+.posts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.card {
+    flex: 1 1 300px;   /* Responsive tự động */
+    border: 1px solid #ddd;
+    padding: 20px;
+    background: white;
+    border-radius: 8px;
+    text-align: left;
+    transition: 0.3s;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+}
+
+/* ===== Style cho button ===== */
+.btn {
+    display: inline-block;
+    padding: 8px 16px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+/* ===== Responsive: < 768px ===== */
+@media (max-width: 768px) {
+    .posts {
+        flex-direction: column;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
+}
