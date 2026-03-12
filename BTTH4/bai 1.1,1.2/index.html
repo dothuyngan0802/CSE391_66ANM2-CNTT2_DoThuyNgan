@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<title>Quản lý điểm sinh viên</title>
+
+<style>
+
+body{
+font-family: Arial, sans-serif;
+background:#f2f4f7;
+display:flex;
+justify-content:center;
+padding-top:40px;
+}
+
+.container{
+background:white;
+padding:25px;
+border-radius:10px;
+width:750px;
+box-shadow:0 8px 25px rgba(0,0,0,0.1);
+}
+
+h2{
+text-align:center;
+margin-bottom:20px;
+}
+
+.input-group{
+display:flex;
+gap:10px;
+margin-bottom:15px;
+}
+
+input,select{
+padding:8px;
+border:1px solid #ccc;
+border-radius:6px;
+}
+
+input:focus,select:focus{
+border-color:#4a90e2;
+outline:none;
+}
+
+button{
+padding:8px 14px;
+border:none;
+border-radius:6px;
+background:#4a90e2;
+color:white;
+cursor:pointer;
+transition:0.2s;
+}
+
+button:hover{
+background:#357abd;
+}
+
+.search-filter{
+display:flex;
+justify-content:space-between;
+margin-bottom:10px;
+}
+
+table{
+width:100%;
+border-collapse:collapse;
+margin-top:10px;
+}
+
+th,td{
+padding:10px;
+border-bottom:1px solid #ddd;
+text-align:center;
+}
+
+th{
+background:#f4f6fb;
+cursor:pointer;
+}
+
+tr:hover{
+background:#f9fafc;
+}
+
+.low-score{
+background:#fff3cd;
+}
+
+.delete-btn{
+background:#e74c3c;
+padding:6px 10px;
+border-radius:5px;
+}
+
+.delete-btn:hover{
+background:#c0392b;
+}
+
+.stats{
+margin-top:10px;
+font-weight:bold;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>📊 Quản lý điểm sinh viên</h2>
+
+<div class="input-group">
+<input type="text" id="name" placeholder="Họ tên">
+<input type="number" id="score" placeholder="Điểm (0-10)">
+<button id="addBtn">Thêm</button>
+</div>
+
+<div class="search-filter">
+<input type="text" id="search" placeholder="🔎 Tìm kiếm sinh viên">
+
+<select id="filter">
+<option value="all">Tất cả</option>
+<option value="Giỏi">Giỏi</option>
+<option value="Khá">Khá</option>
+<option value="Trung bình">Trung bình</option>
+<option value="Yếu">Yếu</option>
+</select>
+</div>
+
+<table>
+
+<thead>
+<tr>
+<th>STT</th>
+<th>Họ tên</th>
+<th id="scoreHeader">Điểm ▲</th>
+<th>Xếp loại</th>
+<th>Thao tác</th>
+</tr>
+</thead>
+
+<tbody id="studentTable"></tbody>
+
+</table>
+
+<p class="stats" id="stats"></p>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
